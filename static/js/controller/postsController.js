@@ -6,6 +6,7 @@ define(function(require) {
   return Ember.Controller.extend({
     findPosts: function() {
       return dctx.downloadPosts().then(function(r) {
+        console.log(r.results);
         return Q.resolve(Ember.getWithDefault(r, 'results', []));
       });
     }
