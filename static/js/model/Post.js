@@ -47,7 +47,8 @@ define(function(require) {
 
   var downloadPosts = function(manager) {
     var p = {
-      _VOXSUPMETHOD_: 'EDGE'
+      _VOXSUPMETHOD_: 'EDGE',
+      fields:"id,message,comments,picture,link,source"
     };
 
     q = breeze.EntityQuery.from('me/posts').withParameters(p).toType('Post');
