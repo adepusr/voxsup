@@ -37,6 +37,9 @@ window.manager = manager;
     },
     downloadPost: function(post_id) {
       return models.Post.downloadPost(manager, post_id);
+    },
+    downloadComments: function(post_id) {
+      return models.Post.downloadComments(manager, post_id);
     }
   };
 });

@@ -34,6 +34,15 @@ define(function(require) {
         }
       }
     });
+    metadataStore.addEntityType({
+      shortName: 'Comment',
+      dataProperties: {
+        message: {
+          dataType: DT.String,
+          isPartOfKey: true
+        }
+      }
+    });
   };
 
   var downloadPosts = function(manager) {
@@ -54,9 +63,18 @@ define(function(require) {
     return manager.executeQuery(q);  
   };
 
+  var downloadComments = function(manager, post_id) {
+    var p = {
+      _VOXSUPMETHOD_: 'OBJ'
+    };
+    q = breeze.EntityQuery.from(post_id + "/comments").withParameters(p).toType('Comment');
+    return manager.executeQuery(q);  
+  };
+
   return {
     initialize: initialize,
     downloadPosts: downloadPosts,
-    downloadPost: downloadPost
+    downloadPost: downloadPost,
+    downloadComments:downloadComments
   };
 });
