@@ -3,7 +3,7 @@ define(function(require) {
 
   var T = Ember.Handlebars.compile('\
     <h4>Post {{model.id}}</h4> \
-    {{outlet}} \
+    {{outlet }} \
   ');
 
   return Ember.View.extend({
