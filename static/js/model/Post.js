@@ -34,7 +34,7 @@ define(function(require) {
         }
       }
     });
-    
+  };
 
   var downloadPosts = function(manager) {
     var p = {
@@ -54,11 +54,6 @@ define(function(require) {
     q = breeze.EntityQuery.from(post_id).withParameters(p).toType('Post');
     return manager.executeQuery(q);  
   };
-  var downloadComments = function(manager, post_id) {
-    var p = {
-      _VOXSUPMETHOD_: 'OBJ'
-    };
-
 
   var downloadComments = function(manager, post_id) {
     var p = {

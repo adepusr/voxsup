@@ -7,7 +7,7 @@ define(function(require) {
     controller: require('../controller/commentsController'),
     route: Ember.Route.extend({
       actions: {
-        delComment: function(comment_id) {
+        deleteComment: function(comment_id) {
           this.transitionTo('post', comment_id);
         }
       },

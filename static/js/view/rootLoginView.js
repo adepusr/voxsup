@@ -3,7 +3,7 @@ define(function(require) {
 
   var T = Ember.Handlebars.compile('\
     <div {{bindAttr class=":fb-login-wrap user:hidden"}}> \
-      <div class="fb-login-button" data-show-faces="false" data-max-rows="1" data-autologoutlink="true" data-scope="publish_action"></div> \
+      <div class="fb-login-button" data-show-faces="false" data-max-rows="1" data-autologoutlink="true" data-scope="publish_action,manage_pages,publish_pages"></div> \
     </div> \
   ');
 

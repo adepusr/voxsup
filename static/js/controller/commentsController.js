@@ -6,7 +6,6 @@ define(function(require) {
   return Ember.Controller.extend({
     findComments: function(post_id) {
       return dctx.downloadComments(post_id).then(function(r) {
-        console.log(r.results)
         return Q.resolve(Ember.getWithDefault(r, 'results', []));
       });
     }

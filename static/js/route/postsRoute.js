@@ -8,6 +8,7 @@ define(function(require) {
     route: Ember.Route.extend({
       actions: {
         showPost: function(post) {
+          console.log(post)
           this.transitionTo('post', post);
         }
       },
