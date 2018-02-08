@@ -63,7 +63,8 @@ define(function(require) {
 
   var downloadComments = function(manager, post_id) {
     var p = {
-      _VOXSUPMETHOD_: 'OBJ'
+      _VOXSUPMETHOD_: 'OBJ',
+      fields: "from,like_count,message"
     };
     q = breeze.EntityQuery.from(post_id + "/comments").withParameters(p);
     return manager.executeQuery(q);  

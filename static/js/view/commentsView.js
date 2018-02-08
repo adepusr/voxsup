@@ -10,6 +10,7 @@ define(function(require) {
         <tr> \
           <td>{{comment.from.name}}</td> \
           <td>{{comment.message}}</td> \
+          <td>{{comment.like_count}} people Liked</td> \
           <td><input type="button" class="btn" value="Delete" {{action deleteComment comment.id}}/></td> \
         </tr> \
       {{/each}} \
