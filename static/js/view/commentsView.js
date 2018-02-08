@@ -9,6 +9,7 @@ define(function(require) {
     <div> \
     {{#each comment in model}} \
          <h4>{{comment.message}}<h4> \
+         <h4>{{comment.from.name}}<h4> \
     {{/each}} \
     </div> \
   ');

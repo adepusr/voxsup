@@ -34,16 +34,7 @@ define(function(require) {
         }
       }
     });
-    metadataStore.addEntityType({
-      shortName: 'Comment',
-      dataProperties: {
-        message: {
-          dataType: DT.String,
-          isPartOfKey: true
-        }
-      }
-    });
-  };
+    
 
   var downloadPosts = function(manager) {
     var p = {
@@ -68,7 +59,7 @@ define(function(require) {
     var p = {
       _VOXSUPMETHOD_: 'OBJ'
     };
-    q = breeze.EntityQuery.from(post_id + "/comments").withParameters(p).toType('Comment');
+    q = breeze.EntityQuery.from(post_id + "/comments").withParameters(p);
     return manager.executeQuery(q);  
   };
 

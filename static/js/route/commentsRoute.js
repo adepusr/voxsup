@@ -6,9 +6,14 @@ define(function(require) {
     view: require('../view/commentsView'),
     controller: require('../controller/commentsController'),
     route: Ember.Route.extend({
+      actions: {
+        delComment: function(comment_id) {
+          this.transitionTo('post', comment_id);
+        }
+      },
     model: function(params, transition) {
-      console.log(params)
-        return this.controllerFor('comments').findComments("1986743364699968_1986745334699771");
+      console.log(transition.resolvedModels.post)
+        return this.controllerFor('comments').findComments(transition.resolvedModels.post.id);
       },
       renderTemplate: function() {
         this.render({ into: 'post'});
