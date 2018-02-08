@@ -31,6 +31,12 @@ define(function(require) {
         },
         created_time: {
           dataType: DT.Date
+        },
+        source: {
+          dataType: DT.String
+        },
+        total_count: {
+          dataType: DT.Int32
         }
       }
     });
@@ -39,7 +45,7 @@ define(function(require) {
   var downloadPosts = function(manager) {
     var p = {
       _VOXSUPMETHOD_: 'EDGE',
-      fields:"id,message,comments,picture,link,source"
+      fields:"name,source,link,message,created_time,icon,picture,comments.limit(1).summary(true),likes.summary(true)"
     };
 
     q = breeze.EntityQuery.from('me/posts').withParameters(p).toType('Post');

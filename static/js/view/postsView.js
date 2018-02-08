@@ -9,13 +9,17 @@ define(function(require) {
       <tbody> \
         {{#each post in model}} \
         {{log post}}\
-          <tr style="cursor:pointer;" {{action showPost post}}> \
+          <tr> \
             <td><img {{bindAttr src=post.icon}}></td> \
             <td>{{date post.created_time}}</td> \
             <td><img class="pic-thumbnail" {{bindAttr src=post.picture}}></td> \
             <td>{{post.message}}</td> \
             <td><a {{bindAttr href=post.link}}>{{post.name}}</a></td> \
-            <td><a {{bindAttr href=post.source}}>{{post.source}}</a></td> \
+            <td> \
+            {{#if post.source}} \
+            <a {{bindAttr href=post.source}}>Click Here</a></td> \
+            {{/if}} \
+            <td><input type="button" class="btn" value="View Comments" {{action showPost post}}/></td>\
           </tr> \
         {{/each}} \
       </tbody> \
