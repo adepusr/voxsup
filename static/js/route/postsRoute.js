@@ -1,7 +1,7 @@
 define(function(require) {
   var Ember = require('ember');
   var App = require('app');
-
+  
   return App.registerRoute('posts', {
     view: require('../view/postsView'),
     controller: require('../controller/postsController'),
@@ -10,7 +10,10 @@ define(function(require) {
         showPost: function(post) {
           this.transitionTo('post', post);
         },
-        sendPost: function(){
+        sendPost: function(data ){          
+         // console.log(data);
+          // console.log(this.get('importantinfo'))
+          this.controllerFor('posts').sendPost(data);
           //this.transitionTo('posts');
         }
       },

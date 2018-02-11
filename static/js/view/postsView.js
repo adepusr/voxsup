@@ -5,8 +5,8 @@ define(function(require) {
   var T = Ember.Handlebars.compile('\
     <h4>Posts</h4> \
     <div class="form-group"> \
-      <input type="text" class="form-control input-sm" value=form.data/> \
-      <input type="button" class="btn" value="Post" {{action sendPost form}}/> \
+        {{textarea class="col-md-6" value=importantinfo cols="40" rows="1" placeholder="Type Text to post"}} \
+        <button class= "btn" type="button" {{action "sendPost" importantinfo}}>Post</button> \
     </div> \
     <table class="table table-striped table-hover"> \
       <thead><tr><th></th><th>Date</th><th>Picture</th><th>Message</th><th>Link</th><th>Source</th></tr></thead> \

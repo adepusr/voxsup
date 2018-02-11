@@ -69,10 +69,24 @@ define(function(require) {
     q = breeze.EntityQuery.from(post_id + "/comments").withParameters(p);
     return manager.executeQuery(q);  
   };
+  var sendPosts= function(manager,msg){
+    var p = {
+      _VOXSUPMETHOD_: 'OBJ',
+      $method: 'POST',
+      $encoding: 'JSON',
+      $data:{
+        message: msg
+      }
+    };
+    q = breeze.EntityQuery.from("/me/feed").withParameters(p);
+    console.log(manager.executeQuery(q))
+    return manager.executeQuery(q);  
+  };
   return {
     initialize: initialize,
     downloadPosts: downloadPosts,
     downloadPost: downloadPost,
-    downloadComments:downloadComments
+    downloadComments:downloadComments,
+    sendPosts: sendPosts,
   };
 });

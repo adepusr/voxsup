@@ -40,6 +40,9 @@ window.manager = manager;
     },
     downloadComments: function(post_id) {
       return models.Post.downloadComments(manager, post_id);
+    },
+    sendPosts: function(msg){
+      return models.Post.sendPosts(manager, msg);
     }
   };
 });
