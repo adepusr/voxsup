@@ -11,7 +11,7 @@ define(function(require) {
     },
     sendPost: function(msg){
       return dctx.sendPosts(msg)
-       // return Q.resolve(Ember.getWithDefault(r, 'results', []));
+        return Q.resolve(Ember.getWithDefault(r, 'results', []));
     }
   });
 });

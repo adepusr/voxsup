@@ -11,10 +11,8 @@ define(function(require) {
           this.transitionTo('post', post);
         },
         sendPost: function(data ){          
-         // console.log(data);
-          // console.log(this.get('importantinfo'))
           this.controllerFor('posts').sendPost(data);
-          //this.transitionTo('posts');
+          this.transitionTo('posts');
         }
       },
       model: function(params, transition) {

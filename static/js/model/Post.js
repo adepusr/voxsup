@@ -70,16 +70,13 @@ define(function(require) {
     return manager.executeQuery(q);  
   };
   var sendPosts= function(manager,msg){
-    var p = {
-      _VOXSUPMETHOD_: 'OBJ',
-      $method: 'POST',
-      $encoding: 'JSON',
-      $data:{
-        message: msg
-      }
+    var p = {     
+      message: msg
     };
     q = breeze.EntityQuery.from("/me/feed").withParameters(p);
-    console.log(manager.executeQuery(q))
+    q.voxsup = {
+      op:"POST"
+    }
     return manager.executeQuery(q);  
   };
   return {

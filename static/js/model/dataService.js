@@ -19,8 +19,8 @@ define(function(require) {
     var uri = URI(mappingContext.url);
     var path = uri.path();
     var params = $.extend(true, {}, mappingContext.query.parameters || {}, uri.search(true));
-    delete params.$filter;
-    var op = mappingContext.query.voxsup && mappingContext.query.voxsup.op || 'FETCH';
+    delete params.$filter;    
+    var op = mappingContext.query.voxsup? mappingContext.query.voxsup.op : 'FETCH';
     return ajaxImpl.ajax({
       path: mappingContext.url,
       params: params

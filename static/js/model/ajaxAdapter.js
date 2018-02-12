@@ -23,6 +23,9 @@ define(function(require) {
       case 'FETCH':
         p = fetchObject(config.path, config.params);
         break;
+        case 'POST':
+        p = postObject(config.path, config.params);
+        break;
       case 'EDGE':
         p = fetchEdge(config.path, $.extend(config.params, {limit: LIMIT}));
         break;
@@ -96,6 +99,10 @@ define(function(require) {
 
   function deleteObject(path, params) {
     return dispatch(path, 'DELETE', params, RETRIES);
+  }
+
+  function postObject(path, params) {
+    return dispatch(path, 'POST', params, RETRIES);
   }
 
   function dispatch(path, method, params, retries) {
